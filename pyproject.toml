@@ -1,0 +1,22 @@
+[project]
+name = "kernel_test"
+version = "0.1.0"
+description = "Test hf-kernels"
+authors = [
+    {name = "Nicolas Patry", email = "nicolas@huggingface.co"}
+]
+readme = "README.md"
+dependencies = [
+    "hf-kernels>=0.1.0",
+    "huggingface-hub>=0.27.1",
+    "numpy>=2.2.1",
+    "torch>=2.5.1",
+]
+
+[tool.kernels.dependencies]
+"kernels-community/activation" = "^0.0.1"
+
+[build-system]
+requires = ["torch", "huggingface_hub", "numpy", "hf_kernels"]
+build-backend = "hf_kernels.build"
+backend-path = ["src"]
